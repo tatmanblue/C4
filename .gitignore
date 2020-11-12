@@ -29,6 +29,7 @@
 .gradle/
 
 # Our build stuff
+Library/
 Temp/
 Builds/
 Logs/
