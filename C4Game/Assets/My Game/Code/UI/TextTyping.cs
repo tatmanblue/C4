@@ -36,14 +36,17 @@ namespace CornTheory.UI
 
         public void SetText(string text)
         {
-            print("got message to start");
-            lastCheckTime = DateTime.MinValue;
             Text = text;
             allDone = false;
+            currentPosition = 0;
+            lastCheckTime = DateTime.MinValue;
         }
         
         private void FixedUpdate()
         {
+            // this means all text has been typed AND the event has fired
+            if (allDone == true) return;
+
             // initialization
             if (lastCheckTime == DateTime.MinValue)
             {
@@ -52,8 +55,6 @@ namespace CornTheory.UI
                 if (Text.Length > 0) allDone = false;
                 return;
             }
-
-            if (allDone == true) return;
             
             // text typing is done
             if (currentPosition >= Text.Length)
@@ -75,10 +76,12 @@ namespace CornTheory.UI
                 lastCheckTime = DateTime.Now;
                 
                 AudioSource.PlayOneShot(AudioClip);
+                // TODO:
+                // 1 rather always printing 1 char, print between 1 and x (like 3) to mimic typing more closely
+                // 2 need to handle special tags like <B> </B> etc
                 string textToShow = Text.Substring(0, currentPosition + 1);
                 currentPosition++;
                 
-                // print($"last check time found {DateTime.Now} text computed {textToShow} {nextTypingEventMS}");
                 UIField.text = textToShow;
             }
         }
@@ -86,12 +89,7 @@ namespace CornTheory.UI
         private int RandomMS()
         {
             int result = Random.Range(MinDelay, MaxDelay);
-            // print($"result {result} {result > MaxDelay} {MaxDelay}");
-            if (result > MaxDelay)
-            {
-                result = MaxDelay;
-                // print($"changing result {result}");
-            }
+            if (result > MaxDelay) result = MaxDelay;
 
             return result;
         }
