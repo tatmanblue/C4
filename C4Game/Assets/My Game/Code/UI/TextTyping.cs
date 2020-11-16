@@ -21,22 +21,23 @@ namespace CornTheory.UI
     [RequireComponent(typeof(TextMeshProUGUI))]
     public class TextTyping : MonoBehaviour
     {
-        public event CompletedAction OnCompleted;
+        public delegate void CompletedTextTypingAction(TypeableTextLine item);
+        public event CompletedTextTypingAction OnTextTypingCompleted;
         [SerializeField] private AudioClip AudioClip;
         [SerializeField] private AudioSource AudioSource;
-        [SerializeField] private TextMeshProUGUI UIField;
-        [SerializeField] private string Text;
+        [SerializeField] private TextMeshProUGUI UIField;        
         [SerializeField] private int MinDelay = 375;
         [SerializeField] private int MaxDelay = 840;
 
+        private TypeableTextLine item;
         private int currentPosition = 0;
         private DateTime lastCheckTime = DateTime.MinValue;
         private int nextTypingEventMS = 0;
         private bool allDone = true;
 
-        public void SetText(string text)
+        public void SetText(TypeableTextLine item)
         {
-            Text = text;
+            this.item = item;
             allDone = false;
             currentPosition = 0;
             lastCheckTime = DateTime.MinValue;
@@ -52,17 +53,17 @@ namespace CornTheory.UI
             {
                 nextTypingEventMS = MinDelay;
                 lastCheckTime = DateTime.Now;
-                if (Text.Length > 0) allDone = false;
+                if (item.Text.Length > 0) allDone = false;
                 return;
             }
             
             // text typing is done
-            if (currentPosition >= Text.Length)
+            if (currentPosition >= item.Text.Length)
             {
                 allDone = true;
                 lastCheckTime = DateTime.MaxValue;
-                CompletedAction action = OnCompleted;
-                if (action != null) action();
+                CompletedTextTypingAction action = OnTextTypingCompleted;
+                if (action != null) action(item);
                 return;
             }
 
@@ -79,7 +80,7 @@ namespace CornTheory.UI
                 // TODO:
                 // 1 rather always printing 1 char, print between 1 and x (like 3) to mimic typing more closely
                 // 2 need to handle special tags like <B> </B> etc
-                string textToShow = Text.Substring(0, currentPosition + 1);
+                string textToShow = item.Text.Substring(0, currentPosition + 1);
                 currentPosition++;
                 
                 UIField.text = textToShow;

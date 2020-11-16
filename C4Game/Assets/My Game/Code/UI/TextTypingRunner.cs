@@ -7,6 +7,10 @@ using UnityEngine;
 
 namespace CornTheory.UI
 {
+    /// <summary>
+    /// Handles feeding a TextTyping instance with TypeableTextLine one at time as each
+    /// TypeableTextLine is completed
+    /// </summary>
     [RequireComponent(typeof(TextTyping))]
     public class TextTypingRunner : MonoBehaviour
     {
@@ -18,7 +22,7 @@ namespace CornTheory.UI
         
         private void Start()
         {
-            Typing.OnCompleted += () =>
+            Typing.OnTextTypingCompleted += (TypeableTextLine item) =>
             {
                 SendNextItem();
             };
@@ -45,7 +49,7 @@ namespace CornTheory.UI
             float waitMS = ms / 1000F;
             Debug.Log($"waiting for {waitMS}");
             yield return new WaitForSeconds(waitMS);
-            Typing.SetText(lines[activeLine].Text);
+            Typing.SetText(lines[activeLine]);
             activeLine++;
 
         }
