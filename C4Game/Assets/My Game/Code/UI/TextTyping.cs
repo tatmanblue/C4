@@ -23,10 +23,16 @@ namespace CornTheory.UI
     {
         public delegate void CompletedTextTypingAction(TypeableTextLine item);
         public event CompletedTextTypingAction OnTextTypingCompleted;
+        /// <summary>
+        /// The sound to make for a keypress
+        /// </summary>
         [SerializeField] private AudioClip AudioClip;
+        /// <summary>
+        /// Required for playing the sound
+        /// </summary>
         [SerializeField] private AudioSource AudioSource;
         [SerializeField] private TextMeshProUGUI UIField;        
-        [SerializeField] private int MinDelay = 375;
+        [SerializeField] private int MinDelay = 305;
         [SerializeField] private int MaxDelay = 840;
 
         private TypeableTextLine item;
