@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Globalization;
 using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
+
+using CornTheory.Data;
 
 namespace CornTheory.UI
 {

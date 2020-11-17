@@ -1,10 +1,10 @@
 ﻿[
-  {"Id":  1, "ActorId": "Agent", "Delay": 2000, "Text": "Cam?"},
-  {"Id":  2, "ActorId": "Cam", "Text": "yeah. who is this?"},
-  {"Id":  3, "ActorId": "Agent", "Delay": 1300, "Text": "I am a friend. I can help."},
-  {"Id":  4, "ActorId": "Cam", "Text": "Right."},
-  {"Id":  5, "ActorId": "Agent", "Text": "You're a good hacker...."},
-  {"Id":  5, "ActorId": "Agent", "Delay": 2000, "Text": "You changed your school grades. Right?"},
-  {"Id":  6, "ActorId": "Cam", "Delay": 1400, "Text": "Yeah. So?"},
-  {"Id":  7, "ActorId": "Agent", "Text": "I am a friend. I can help."}
+  {"Id":  1, "LineType":  "Incoming", "ActorId": "Agent", "Delay": 2000, "Text": "Cam?"},
+  {"Id":  2, "LineType":  "Local", "ActorId": "Cam", "Text": "yeah. who is this?"},
+  {"Id":  3, "LineType":  "Incoming", "ActorId": "Agent", "Delay": 2300, "Text": "I am a friend. I can help."},
+  {"Id":  4, "LineType":  "Local", "ActorId": "Cam", "Delay": 1000, "Text": "Right."},
+  {"Id":  5, "LineType":  "Incoming", "ActorId": "Agent", "Text": "You're a good hacker...."},
+  {"Id":  5, "LineType":  "Incoming", "ActorId": "Agent", "Delay": 2500, "Text": "You changed your school grades. Right?"},
+  {"Id":  6, "LineType":  "Local", "ActorId": "Cam", "Delay": 1400, "Text": "Yeah. So?"},
+  {"Id":  7, "LineType":  "Incoming", "ActorId": "Agent", "Text": "I am a friend. I can help."}
 ]

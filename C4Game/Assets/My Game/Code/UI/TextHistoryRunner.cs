@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 
+using CornTheory.Data;
+
 namespace CornTheory.UI
 {
     /// <summary>

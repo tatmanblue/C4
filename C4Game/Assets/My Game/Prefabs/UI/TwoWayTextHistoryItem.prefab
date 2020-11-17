@@ -91,9 +91,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WaitImage: {fileID: 2048715313152717066}
-  SpriteRenderer: {fileID: 0}
   Who: {fileID: 1107968460469901197}
   Said: {fileID: 1107968460572528215}
+  WaitMS: 2000
 --- !u!1 &1107968460469901195
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,6 +371,7 @@ GameObject:
   - component: {fileID: 2573994687575722404}
   - component: {fileID: 3552696325838133246}
   - component: {fileID: 2801416979390328887}
+  - component: {fileID: 3767641598860174541}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -434,3 +435,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &3767641598860174541
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048715313152717066}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a26bcfb9bf7e477468999748f0238eb2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

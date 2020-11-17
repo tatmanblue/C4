@@ -2,8 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Newtonsoft.Json;
 using UnityEngine;
+
+using CornTheory.Data;
 
 namespace CornTheory.UI
 {
@@ -32,6 +35,7 @@ namespace CornTheory.UI
              File.Create(Application.persistentDataPath + "/gamesave.save");
              */
             lines = JsonConvert.DeserializeObject<List<TypeableTextLine>>(ResourceFile.text);
+            lines.OrderBy(i => i.Id);
             activeLine = 0;
             SendNextItem();
         }
@@ -41,6 +45,7 @@ namespace CornTheory.UI
             if (activeLine >= lines.Count) return;
             if (null == lines) return;
             
+            Debug.Log($"line type {lines[activeLine].LineType}");
             StartCoroutine(DelaySettingText(lines[activeLine].Delay));
         }
 
@@ -53,31 +58,5 @@ namespace CornTheory.UI
             activeLine++;
 
         }
-    }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    [Serializable]
-    public class TypeableTextLine
-    {
-        /// <summary>
-        /// unique ID. Text will be be played sequentially based on this ID
-        /// </summary>
-        public int Id;
-        /// <summary>
-        /// unique ID per "voice" in chat.
-        /// TODO: it would be nice if this could be processed through app settings similar to how an
-        ///       env variable is used.
-        /// </summary>
-        public string ActorId;
-        /// <summary>
-        /// milliseconds to wait before start typing the text
-        /// </summary>
-        public int Delay = 750;
-        /// <summary>
-        /// the text to "typed"
-        /// </summary>
-        public string Text;
     }
 }
