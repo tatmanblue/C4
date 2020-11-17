@@ -31,6 +31,11 @@ namespace CornTheory.UI
                 SendNextItem();
             };
 
+            IncomingTyping.OnTextTypingCompleted += (TypeableTextLine item) =>
+            {
+                SendNextItem();
+            };
+
             /*
              saving this info here even though its for another functionality: save game state
              File.Create(Application.persistentDataPath + "/gamesave.save");
@@ -60,21 +65,21 @@ namespace CornTheory.UI
 
         private IEnumerator StartTypingText()
         {
-            float waitMS = lines[activeLine].Delay / 1000F;
-            Debug.Log($"waiting for {waitMS}");
-            yield return new WaitForSeconds(waitMS);
-            Typing.SetText(lines[activeLine]);
+            int currentLine = activeLine;
             activeLine++;
-
+            float waitMS = lines[currentLine].Delay / 1000F;
+            yield return new WaitForSeconds(waitMS);
+            Typing.SetText(lines[currentLine]);
         }
 
         private IEnumerator StartIncomingItem()
         {
-            IncomingTyping.AddIncomingTextHistoryItem(lines[activeLine]);
-            float waitMS = lines[activeLine].Delay / 1000F;
-            yield return new WaitForSeconds(waitMS);
+            int currentLine = activeLine;
             activeLine++;
-            SendNextItem();
+            float waitMS = lines[currentLine].Delay / 1000F;
+            yield return new WaitForSeconds(waitMS);
+            IncomingTyping.AddIncomingTextHistoryItem(lines[currentLine]);
+            yield break;
         }
     }
 }

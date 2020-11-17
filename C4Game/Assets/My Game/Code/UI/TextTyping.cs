@@ -20,7 +20,7 @@ namespace CornTheory.UI
     [RequireComponent(typeof(TextMeshProUGUI))]
     public class TextTyping : MonoBehaviour
     {
-        public delegate void CompletedTextTypingAction(TypeableTextLine item);
+
         public event CompletedTextTypingAction OnTextTypingCompleted;
         /// <summary>
         /// The sound to make for a keypress
@@ -67,6 +67,7 @@ namespace CornTheory.UI
             {
                 allDone = true;
                 lastCheckTime = DateTime.MaxValue;
+                UIField.text = string.Empty;
                 CompletedTextTypingAction action = OnTextTypingCompleted;
                 if (action != null) action(item);
                 return;

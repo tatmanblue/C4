@@ -7,6 +7,7 @@ namespace CornTheory.UI
 {
     public class IncomingTextTypingHistoryRunner : MonoBehaviour
     {
+        public event CompletedTextTypingAction OnTextTypingCompleted;
         /// <summary>
         /// Prefab:  TwoWayTextHistoryItem.prefab
         /// </summary>
@@ -38,6 +39,8 @@ namespace CornTheory.UI
             uiItem.Who.text = item.ActorId;
             uiItem.Said.text = item.Text;
             listCreator.PlayReceivedIndicatorSound();
+            CompletedTextTypingAction action = OnTextTypingCompleted;
+            if (null != action) action(item);
         }
     }
 }
