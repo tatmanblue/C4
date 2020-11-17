@@ -8,7 +8,7 @@ namespace CornTheory.UI
     /// Listens for TextTyping completion messages so that it can add the text
     /// to the ScrollView which is for displaying history of TypeableTextLine
     /// </summary>
-    public class TextHistoryRunner : MonoBehaviour
+    public class TextTypingHistoryRunner : MonoBehaviour
     {
         [SerializeField] private TextTyping Typing;
         /// <summary>

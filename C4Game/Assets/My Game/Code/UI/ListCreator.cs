@@ -54,7 +54,7 @@ namespace CornTheory.UI
         /// <param name="listItem"></param>
         /// <param name="height"></param>
         /// <returns></returns>
-        private GameObject StartItemToHistory(GameObject listItem, int height = 50)
+        public GameObject StartItemToHistory(GameObject listItem, int height = 50)
         {
             int itemCount = numberOfItems;
             numberOfItems++;

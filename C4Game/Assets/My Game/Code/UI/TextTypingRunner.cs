@@ -18,6 +18,7 @@ namespace CornTheory.UI
     public class TextTypingRunner : MonoBehaviour
     {
         [SerializeField] private TextTyping Typing;
+        [SerializeField] private IncomingTextTypingHistoryRunner IncomingTyping;
         [SerializeField] private TextAsset ResourceFile;
 
         private List<TypeableTextLine> lines;
@@ -44,19 +45,36 @@ namespace CornTheory.UI
         {
             if (activeLine >= lines.Count) return;
             if (null == lines) return;
+
+            switch (lines[activeLine].LineType)
+            {
+                case TypeableTextLineType.Incoming:
+                    StartCoroutine(StartIncomingItem());
+                    break;
+                default:
+                    StartCoroutine(StartTypingText());
+                    break;
+            }
             
-            Debug.Log($"line type {lines[activeLine].LineType}");
-            StartCoroutine(DelaySettingText(lines[activeLine].Delay));
         }
 
-        private IEnumerator DelaySettingText(float ms)
+        private IEnumerator StartTypingText()
         {
-            float waitMS = ms / 1000F;
+            float waitMS = lines[activeLine].Delay / 1000F;
             Debug.Log($"waiting for {waitMS}");
             yield return new WaitForSeconds(waitMS);
             Typing.SetText(lines[activeLine]);
             activeLine++;
 
+        }
+
+        private IEnumerator StartIncomingItem()
+        {
+            IncomingTyping.AddIncomingTextHistoryItem(lines[activeLine]);
+            float waitMS = lines[activeLine].Delay / 1000F;
+            yield return new WaitForSeconds(waitMS);
+            activeLine++;
+            SendNextItem();
         }
     }
 }

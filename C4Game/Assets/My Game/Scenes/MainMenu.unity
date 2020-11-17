@@ -216,7 +216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.990566, b: 0.990566, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1833,6 +1833,7 @@ GameObject:
   - component: {fileID: 1878754677}
   - component: {fileID: 1878754681}
   - component: {fileID: 1878754682}
+  - component: {fileID: 1878754683}
   m_Layer: 5
   m_Name: TypingText
   m_TagString: Untagged
@@ -2081,6 +2082,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Typing: {fileID: 1878754677}
+  IncomingTyping: {fileID: 1878754683}
   ResourceFile: {fileID: 4900000, guid: d1c0134810337a140be222f0c2bd31fe, type: 3}
 --- !u!114 &1878754682
 MonoBehaviour:
@@ -2096,6 +2098,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Typing: {fileID: 1878754677}
   DisplayItem: {fileID: 1107968459716971853, guid: e6fbafbb54795334aaaf456cdd3b7fa1,
+    type: 3}
+  ScrollView: {fileID: 1677941412}
+--- !u!114 &1878754683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878754675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79d907cf756d48798f9d37593227a585, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayItem: {fileID: 1107968459716971853, guid: 1724ac58190686c43b5b83b9f4e8a14e,
     type: 3}
   ScrollView: {fileID: 1677941412}
 --- !u!1 &2005611430
