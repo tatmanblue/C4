@@ -78,16 +78,18 @@ namespace CornTheory.UI
             TimeSpan span = DateTime.Now - lastCheckTime;
             if (span.Milliseconds >= nextTypingEventMS)
             {
+                // set the next event ahead of doing anything else to
+                // prevent another FixedUpdate from stomping on this
                 nextTypingEventMS = RandomMS();
-                
                 lastCheckTime = DateTime.Now;
+                currentPosition++;
                 
                 AudioSource.PlayOneShot(AudioClip);
                 // TODO:
                 // 1 rather always printing 1 char, print between 1 and x (like 3) to mimic typing more closely
                 // 2 need to handle special tags like <B> </B> etc
-                string textToShow = item.Text.Substring(0, currentPosition + 1);
-                currentPosition++;
+                string textToShow = item.Text.Substring(0, currentPosition);
+
                 
                 UIField.text = textToShow;
             }

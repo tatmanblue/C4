@@ -32,20 +32,43 @@ namespace CornTheory.UI
 
         public T AddItemToHistory<T>(GameObject listItem, int height = 50)
         {
-            Content.sizeDelta = new Vector2(0, numberOfItems * height);
+            GameObject spawnedItem = StartItemToHistory(listItem, height);
+            PlayReceivedIndicatorSound();
+            return spawnedItem.GetComponent<T>();
+        }
+
+        /// <summary>
+        /// Plays sound clip AudioClip
+        /// </summary>
+        /// <param name="ms"></param>
+        public void PlayReceivedIndicatorSound(int ms = 250)
+        {
+            // TODO: make this delay data driven
+            StartCoroutine(PlaySound(250));
+        }
+
+        /// <summary>
+        /// As long as multiple items do not call this method at the same time we are ok.
+        /// TODO: make blocking
+        /// </summary>
+        /// <param name="listItem"></param>
+        /// <param name="height"></param>
+        /// <returns></returns>
+        private GameObject StartItemToHistory(GameObject listItem, int height = 50)
+        {
+            int itemCount = numberOfItems;
+            numberOfItems++;
             
-            float spawnY = numberOfItems * height;
+            Content.sizeDelta = new Vector2(0, itemCount * height);
+            float spawnY = itemCount * height;
 
             // taken from https://www.codeneuron.com/creating-a-dynamic-scrollable-list-in-unity/
             // one difference is we are setting x to 0, always.  not sure why that has to be different
             Vector3 pos = new Vector3(0, -spawnY, SpawnPoint.position.z);
             GameObject spawnedItem = Instantiate(listItem, pos, SpawnPoint.rotation);
             spawnedItem.transform.SetParent(SpawnPoint, false);
-            
-            numberOfItems ++;
-            // TODO: make this delay data driven
-            StartCoroutine(PlaySound(250));
-            return spawnedItem.GetComponent<T>();
+
+            return spawnedItem;
         }
         
         private IEnumerator PlaySound(float ms)

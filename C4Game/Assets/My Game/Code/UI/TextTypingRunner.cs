@@ -65,6 +65,11 @@ namespace CornTheory.UI
         /// unique ID. Text will be be played sequentially based on this ID
         /// </summary>
         public int Id;
+        /// <summary>
+        /// unique ID per "voice" in chat.
+        /// TODO: it would be nice if this could be processed through app settings similar to how an
+        ///       env variable is used.
+        /// </summary>
         public string ActorId;
         /// <summary>
         /// milliseconds to wait before start typing the text

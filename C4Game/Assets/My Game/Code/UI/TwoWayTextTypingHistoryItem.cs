@@ -8,11 +8,18 @@ namespace CornTheory.UI
 {
     /// <summary>
     /// For a message displayed in a ScrollView.  "Bound" to
-    /// prefab "TextHistoryItem.prefab"
+    /// prefab "TwoWayTextHistoryItem.prefab"
     /// </summary>
-    public class TextTypingHistoryItem : MonoBehaviour
+    public class TwoWayTextTypingHistoryItem : MonoBehaviour
     {
+        public GameObject WaitImage;
         public TextMeshProUGUI Who;
         public TextMeshProUGUI Said;
+        public int WaitMS = 2000;
+
+        private void FixedUpdate()
+        {
+            
+        }
     }
 }
