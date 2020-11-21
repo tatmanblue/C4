@@ -36,7 +36,6 @@ Logs/
 obj/
 
 # Temporary Hiding required Unity Store Assets
-JsonDotNet/
 No White Noise Library/
 ProceduralUIImage/
 TextMesh Pro/
