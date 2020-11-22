@@ -455,7 +455,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2005611431}
   m_Direction: 2
   m_Value: 1
-  m_Size: 1
+  m_Size: 0.8312516
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1041,8 +1041,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.061309814, y: 0}
-  m_SizeDelta: {x: 0, y: 71.35184}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &877644999
 GameObject:
@@ -1636,8 +1636,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 219.56, y: -142.3}
-  m_SizeDelta: {x: -986.87744, y: -634.6245}
+  m_AnchoredPosition: {x: 335.8, y: 274}
+  m_SizeDelta: {x: -754.3742, y: -634.6245}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1677941414
 MonoBehaviour:
@@ -1857,7 +1857,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 221.2, y: -387.1}
+  m_AnchoredPosition: {x: 354, y: 92}
   m_SizeDelta: {x: 490.8449, y: 95.83716}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1878754677
@@ -2200,6 +2200,7 @@ GameObject:
   - component: {fileID: 2131443236}
   - component: {fileID: 2131443238}
   - component: {fileID: 2131443237}
+  - component: {fileID: 2131443239}
   m_Layer: 5
   m_Name: RawImage
   m_TagString: Untagged
@@ -2266,3 +2267,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2131443235}
   m_CullTransparentMesh: 0
+--- !u!114 &2131443239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131443235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 771a6d85dd878e847852d82c6a05b19b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Item: {fileID: 2131443237}
+  AlphaAdjustTo: 0
+  DurationMS: 0
