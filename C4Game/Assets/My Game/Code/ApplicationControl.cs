@@ -18,5 +18,10 @@ namespace CornTheory
         {
             Screen.SetResolution(1024, 768, fullScreen);
         }
+
+        public void Set3840x2160(bool fullScreen = true)
+        {
+            Screen.SetResolution(3840, 2160, fullScreen);
+        }
     }
 }
