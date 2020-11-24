@@ -2,6 +2,9 @@
 
 namespace CornTheory
 {
+    /// <summary>
+    /// Static methods, probably will go away as other types take shape
+    /// </summary>
     public class ApplicationControl : MonoBehaviour
     {
         public void Quit(int exitCode = 0)
