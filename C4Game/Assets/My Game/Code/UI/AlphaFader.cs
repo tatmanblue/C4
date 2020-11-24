@@ -19,7 +19,7 @@ namespace CornTheory.UI
         /// </summary>
         [SerializeField] private int DurationMS;
 
-        public void StartAdjustment(int alphaAdjustTo, int durationMS)
+        public void StartFading(int alphaAdjustTo, int durationMS)
         {
             // 1 - calculate the amount of adjustment to make
             //       formula of # milliseconds and total AlphaAdjustment
@@ -28,9 +28,9 @@ namespace CornTheory.UI
             Debug.Log("TODO");
         }
 
-        public void StartAdjustment()
+        public void StartFading()
         {
-            StartAdjustment(AlphaAdjustTo, DurationMS);
+            StartFading(AlphaAdjustTo, DurationMS);
         }
 
         private void FixedUpdate()
