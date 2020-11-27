@@ -70,7 +70,6 @@ namespace CornTheory.UI
                 Color color = Text.color;
                 if (color.a >= 1.0F)
                 {
-                    Debug.Log($"Started at {startedAt} and finished at {lastUpdateAt}");
                     Text.color = originalTextColor;
                     run = false;
                     return;

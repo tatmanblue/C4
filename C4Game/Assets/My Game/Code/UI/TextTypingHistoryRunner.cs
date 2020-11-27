@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 using CornTheory.Data;
 
@@ -21,16 +22,21 @@ namespace CornTheory.UI
         [SerializeField] private GameObject ScrollView = null;
 
         private CornTheory.UI.ListCreator listCreator;
+        private ScrollRect scrollView;
 
         private void Start()
         {
             listCreator = ScrollView.GetComponent<CornTheory.UI.ListCreator>();
+            scrollView = ScrollView.GetComponent<ScrollRect>();
             
             Typing.OnTextTypingCompleted += (TypeableTextLine item) =>
             {
                 TextTypingHistoryItem displayItem = listCreator.AddItemToHistory<TextTypingHistoryItem>(DisplayItem);
                 displayItem.Who.text = item.ActorId;
                 displayItem.Said.text = item.Text;
+                
+                Canvas.ForceUpdateCanvases();
+                scrollView.verticalScrollbar.value = 0f;
             };
         }
     }

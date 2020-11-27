@@ -76,7 +76,6 @@ namespace CornTheory.UI
                 Color color = Image.color;
                 if (color.a >= 1.0F)
                 {
-                    Debug.Log($"Started at {startedAt} and finished at {lastUpdateAt}");
                     Image.color = originalButtonColor;
                     run = false;
                     return;

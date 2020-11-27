@@ -75,7 +75,6 @@ namespace CornTheory.UI
                 Color color = Item.color;
                 if (color.a >= 1.0F)
                 {
-                    Debug.Log($"Started at {startedAt} and finished at {lastUpdateAt}");
                     Item.color = originalColor;
                     run = false;
                     return;

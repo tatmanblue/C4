@@ -40,16 +40,17 @@ namespace CornTheory.UI
         public void AddIncomingTextHistoryItem(TypeableTextLine item)
         {
             GameObject spawnedItem = listCreator.StartItemToHistory(DisplayItem);
-            IncomingTextTypingHistoryItem uiItem = spawnedItem.GetComponent<IncomingTextTypingHistoryItem>();
-            StartCoroutine(StartTypingText(item, uiItem));
-            
             Canvas.ForceUpdateCanvases();
             scrollView.verticalScrollbar.value = 0f;
+            IncomingTextTypingHistoryItem uiItem = spawnedItem.GetComponent<IncomingTextTypingHistoryItem>();
+            StartCoroutine(StartTypingText(item, uiItem));
         }
         
         private IEnumerator StartTypingText(TypeableTextLine item, IncomingTextTypingHistoryItem uiItem)
         {
             // start by allowing the incoming message indicator to blink for duration
+            Canvas.ForceUpdateCanvases();
+            scrollView.verticalScrollbar.value = 0f;
             float waitMS = uiItem.WaitMS / 1000F;
             yield return new WaitForSeconds(waitMS);
             
@@ -61,8 +62,6 @@ namespace CornTheory.UI
             uiItem.WaitImage.SetActive(false);
             uiItem.Who.text = item.ActorId;
             uiItem.Said.text = item.Text;
-            Canvas.ForceUpdateCanvases();
-            scrollView.verticalScrollbar.value = 0f;
             messagesReceived++;
             yield return null;
             
