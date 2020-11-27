@@ -3,6 +3,8 @@ using UnityEngine;
 
 using CornTheory.Data;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 namespace CornTheory.UI
 {
@@ -24,13 +26,15 @@ namespace CornTheory.UI
         [SerializeField] private TextAlphaFader TextFader1 = null;
         [SerializeField] private TextAlphaFader TextFader2 = null;
 
-        private CornTheory.UI.ListCreator listCreator;
+        private CornTheory.UI.ListCreator listCreator = null;
+        private ScrollRect scrollView;
         private int messagesReceived = 0;
         private bool fadingStarted = false;
 
         private void Start()
         {
             listCreator = ScrollView.GetComponent<CornTheory.UI.ListCreator>();
+            scrollView = ScrollView.GetComponent<ScrollRect>();
         }
 
         public void AddIncomingTextHistoryItem(TypeableTextLine item)
@@ -38,6 +42,9 @@ namespace CornTheory.UI
             GameObject spawnedItem = listCreator.StartItemToHistory(DisplayItem);
             IncomingTextTypingHistoryItem uiItem = spawnedItem.GetComponent<IncomingTextTypingHistoryItem>();
             StartCoroutine(StartTypingText(item, uiItem));
+            
+            Canvas.ForceUpdateCanvases();
+            scrollView.verticalScrollbar.value = 0f;
         }
         
         private IEnumerator StartTypingText(TypeableTextLine item, IncomingTextTypingHistoryItem uiItem)
@@ -54,6 +61,8 @@ namespace CornTheory.UI
             uiItem.WaitImage.SetActive(false);
             uiItem.Who.text = item.ActorId;
             uiItem.Said.text = item.Text;
+            Canvas.ForceUpdateCanvases();
+            scrollView.verticalScrollbar.value = 0f;
             messagesReceived++;
             yield return null;
             
