@@ -1,10 +1,11 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
+using CornTheory.Interfaces;
 
 namespace CornTheory.UI
 {
-    public class AlphaFader : MonoBehaviour
+    public class RawImageAlphaFader : MonoBehaviour, IFader
     {
         /// <summary>
         /// UI game object to affect the change
@@ -35,12 +36,12 @@ namespace CornTheory.UI
         {
             AlphaAdjustTo = alphaAdjustTo;
             DurationMS = durationMS;
-            run = true;
+            StartFading();   
         }
 
         public void StartFading()
         {
-            StartFading(AlphaAdjustTo, DurationMS);
+            run = true;
         }
 
         private void Start()

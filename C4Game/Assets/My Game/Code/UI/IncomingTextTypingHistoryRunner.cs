@@ -2,6 +2,7 @@
 using UnityEngine;
 
 using CornTheory.Data;
+using UnityEngine.Serialization;
 
 namespace CornTheory.UI
 {
@@ -17,7 +18,11 @@ namespace CornTheory.UI
         /// </summary>
         [SerializeField] private GameObject ScrollView = null;
 
-        [SerializeField] private AlphaFader Fader = null;
+        [SerializeField] private RawImageAlphaFader ImageFader1 = null;
+        [SerializeField] private ButtonAlphaFader ButtonFader1 = null;
+        [SerializeField] private ButtonAlphaFader ButtonFader2 = null;
+        [SerializeField] private TextAlphaFader TextFader1 = null;
+        [SerializeField] private TextAlphaFader TextFader2 = null;
 
         private CornTheory.UI.ListCreator listCreator;
         private int messagesReceived = 0;
@@ -57,10 +62,14 @@ namespace CornTheory.UI
             if (null != action) action(item);
             
             // and start the fading of the controls
-            if ((fadingStarted == false) && (messagesReceived > 1) && (null != Fader))
+            if ((fadingStarted == false) && (messagesReceived > 1))
             {
                 fadingStarted = true;
-                Fader.StartFading();
+                if (null != ImageFader1) ImageFader1.StartFading();
+                if (null != ButtonFader1) ButtonFader1.StartFading();
+                if (null != ButtonFader2) ButtonFader2.StartFading();
+                if (null != TextFader1) TextFader1.StartFading();
+                if (null != TextFader2) TextFader2.StartFading();
             }
         }
     }
