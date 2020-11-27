@@ -5,6 +5,9 @@ using CornTheory.Interfaces;
 
 namespace CornTheory.UI
 {
+    /// <summary>
+    /// Fades In (using alpha channel) a raw image
+    /// </summary>
     public class RawImageAlphaFader : MonoBehaviour, IFader
     {
         /// <summary>

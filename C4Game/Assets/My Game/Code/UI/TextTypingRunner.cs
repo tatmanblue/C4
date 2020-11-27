@@ -63,6 +63,11 @@ namespace CornTheory.UI
             
         }
 
+        /// <summary>
+        /// In a messaging client, a user types text.  In this case, the user
+        /// is "Cam" or the player.  So TypingText emulates "Cam" typing text
+        /// </summary>
+        /// <returns></returns>
         private IEnumerator StartTypingText()
         {
             int currentLine = activeLine;
@@ -72,6 +77,12 @@ namespace CornTheory.UI
             Typing.SetText(lines[currentLine]);
         }
 
+        /// <summary>
+        /// In a messaging client, when someone remote is typing a message an indicator
+        /// shows they are typing a message and beep occurs when the message is received. 
+        /// In this case, IncomingItem is that behavior
+        /// </summary>
+        /// <returns></returns>
         private IEnumerator StartIncomingItem()
         {
             int currentLine = activeLine;

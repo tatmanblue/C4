@@ -6,6 +6,9 @@ using CornTheory.Interfaces;
 
 namespace CornTheory.UI
 {
+    /// <summary>
+    /// Fades In (using alpha channel) an image and the text of a TextMeshProUGUI in unison
+    /// </summary>
     public class ButtonAlphaFader : MonoBehaviour, IFader
     {
         [SerializeField] private Image Image;

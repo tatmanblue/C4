@@ -5,6 +5,9 @@ using CornTheory.Interfaces;
 
 namespace CornTheory.UI
 {
+    /// <summary>
+    /// Fades In (using alpha channel) text of TextMeshProUGUI
+    /// </summary>
     public class TextAlphaFader : MonoBehaviour, IFader
     {
         [SerializeField] private TextMeshProUGUI Text;
