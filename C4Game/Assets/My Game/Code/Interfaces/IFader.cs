@@ -3,5 +3,6 @@
     public interface IFader
     {
         void StartFading();
+        event CompletedFading OnFadingComplete;
     }
 }

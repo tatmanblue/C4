@@ -10,6 +10,8 @@ namespace CornTheory.UI
     /// </summary>
     public class RawImageAlphaFader : MonoBehaviour, IFader
     {
+        public event CompletedFading OnFadingComplete;
+        
         /// <summary>
         /// UI game object to affect the change
         /// TODO: should this be a different type?

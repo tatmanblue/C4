@@ -8,9 +8,14 @@ namespace CornTheory.UI
 {
     /// <summary>
     /// Fades In (using alpha channel) an image and the text of a TextMeshProUGUI in unison
+    ///
+    /// Recommendation is this class goes on a UI button control.  It must have TextMeshProUGUI for text, however.
+    /// This class can be attached to any UI object, however.
     /// </summary>
     public class ButtonAlphaFader : MonoBehaviour, IFader
     {
+        public event CompletedFading OnFadingComplete;
+        
         [SerializeField] private Image Image;
         [SerializeField] private TextMeshProUGUI Text;
         

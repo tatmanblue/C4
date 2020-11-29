@@ -7,9 +7,14 @@ namespace CornTheory.UI
 {
     /// <summary>
     /// Fades In (using alpha channel) text of TextMeshProUGUI
+    ///
+    /// Suggestion is this class is added to a TextMeshProUGUI, but
+    /// it can live anywhere.  
     /// </summary>
     public class TextAlphaFader : MonoBehaviour, IFader
     {
+        public event CompletedFading OnFadingComplete;
+        
         [SerializeField] private TextMeshProUGUI Text;
         
         [SerializeField] private float AlphaAdjustTo;

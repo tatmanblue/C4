@@ -2,6 +2,7 @@
 using UnityEngine;
 
 using CornTheory.Data;
+using CornTheory.UI.Tweening;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
@@ -20,11 +21,10 @@ namespace CornTheory.UI
         /// </summary>
         [SerializeField] private GameObject ScrollView = null;
 
-        [SerializeField] private RawImageAlphaFader ImageFader1 = null;
-        [SerializeField] private ButtonAlphaFader ButtonFader1 = null;
-        [SerializeField] private ButtonAlphaFader ButtonFader2 = null;
-        [SerializeField] private TextAlphaFader TextFader1 = null;
-        [SerializeField] private TextAlphaFader TextFader2 = null;
+        /// <summary>
+        /// We use the FaderController to trigger when fading starts and to know when fading ends
+        /// </summary>
+        [SerializeField] private FaderController FadeControl = null;
 
         private CornTheory.UI.ListCreator listCreator = null;
         private ScrollRect scrollView;
@@ -73,11 +73,7 @@ namespace CornTheory.UI
             if ((fadingStarted == false) && (messagesReceived > 1))
             {
                 fadingStarted = true;
-                if (null != ImageFader1) ImageFader1.StartFading();
-                if (null != ButtonFader1) ButtonFader1.StartFading();
-                if (null != ButtonFader2) ButtonFader2.StartFading();
-                if (null != TextFader1) TextFader1.StartFading();
-                if (null != TextFader2) TextFader2.StartFading();
+                if (null != FadeControl) FadeControl.StartFading();
             }
         }
     }
