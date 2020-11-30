@@ -1,9 +1,10 @@
 ﻿using System;
+using CornTheory;
+using CornTheory.Interfaces;
 using UnityEngine;
 using UnityEngine.UI;
-using CornTheory.Interfaces;
 
-namespace CornTheory.UI
+namespace My_Game.Code.UI.Tweening
 {
     /// <summary>
     /// Fades In (using alpha channel) a raw image

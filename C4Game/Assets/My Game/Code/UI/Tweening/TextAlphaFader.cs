@@ -1,9 +1,10 @@
 ﻿using System;
-using UnityEngine;
-using TMPro;
+using CornTheory;
 using CornTheory.Interfaces;
+using TMPro;
+using UnityEngine;
 
-namespace CornTheory.UI
+namespace My_Game.Code.UI.Tweening
 {
     /// <summary>
     /// Fades In (using alpha channel) text of TextMeshProUGUI
