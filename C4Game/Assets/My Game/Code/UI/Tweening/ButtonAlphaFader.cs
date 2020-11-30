@@ -1,10 +1,11 @@
 ﻿using System;
+using CornTheory;
+using CornTheory.Interfaces;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using CornTheory.Interfaces;
 
-namespace CornTheory.UI
+namespace My_Game.Code.UI.Tweening
 {
     /// <summary>
     /// Fades In (using alpha channel) an image and the text of a TextMeshProUGUI in unison
