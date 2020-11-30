@@ -9,12 +9,17 @@ namespace CornTheory
     /// <summary>
     /// identifies where in the UI the game is
     /// </summary>
+    [Serializable]
     public enum GameUIState
     {
         /// <summary>
         /// Main screen
         /// </summary>
         AtMain,
+        /// <summary>
+        /// Popup in the main screen
+        /// </summary>
+        AtMainPopup,
         /// <summary>
         /// In world, playing game
         /// </summary>

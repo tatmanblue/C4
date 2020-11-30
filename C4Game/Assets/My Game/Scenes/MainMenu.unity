@@ -1123,6 +1123,7 @@ GameObject:
   - component: {fileID: 653179482}
   - component: {fileID: 653179481}
   - component: {fileID: 653179485}
+  - component: {fileID: 653179486}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1235,6 +1236,19 @@ MonoBehaviour:
   showMissionsSceneStart: 0
   showDelay: 0.75
   skyBox: {fileID: 0}
+--- !u!114 &653179486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653179480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d0a04994d5c4e8e89819388d71c0c00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parent: {fileID: 653179480}
 --- !u!1 &732346003
 GameObject:
   m_ObjectHideFlags: 0
@@ -3278,12 +3292,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 653179485}
-        m_MethodName: Quit
-        m_Mode: 1
+      - m_Target: {fileID: 653179486}
+        m_MethodName: ShowPopup
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1107968459716971853, guid: 22ee359d783bd9240b922b07113ee42d,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

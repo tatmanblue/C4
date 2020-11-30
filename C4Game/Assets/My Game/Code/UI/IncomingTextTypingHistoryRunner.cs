@@ -1,11 +1,8 @@
 ﻿using System.Collections;
 using UnityEngine;
-
+using UnityEngine.UI;
 using CornTheory.Data;
 using CornTheory.UI.Tweening;
-using UnityEngine.Serialization;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 namespace CornTheory.UI
 {
