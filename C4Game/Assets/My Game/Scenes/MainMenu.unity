@@ -1889,8 +1889,8 @@ MonoBehaviour:
 
 
 
-    He found himself in a corn field,
-    and starting to question what did he actually sign up for.....'
+    Long story short, he found himself
+    in a corn field, and starting to question what did he actually sign up for.....'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -2300,7 +2300,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 222, y: 248}
+  m_AnchoredPosition: {x: 238.5, y: 248}
   m_SizeDelta: {x: 424.13806, y: 249.37549}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1677941414
@@ -2522,7 +2522,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 235, y: 97}
+  m_AnchoredPosition: {x: 251.5, y: 97}
   m_SizeDelta: {x: 398.44092, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1878754677
@@ -3377,7 +3377,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 19, y: 107}
+  m_AnchoredPosition: {x: 35.5, y: 107}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2048850438
