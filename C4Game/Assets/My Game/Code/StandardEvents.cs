@@ -1,4 +1,5 @@
 ﻿using CornTheory.Data;
+using UnityEngine;
 
 namespace CornTheory
 {
@@ -14,12 +15,12 @@ namespace CornTheory
     /// A popup dialog has been opened
     /// </summary>
     
-    public delegate void PopupOpened();
+    public delegate void PopupOpened(GameObject which);
 
     /// <summary>
     /// A popup dialog has been closed
     /// </summary>
-    public delegate void PopupClosed();
+    public delegate void PopupClosed(GameObject which);
 
     /// <summary>
     /// If dialogs are opened sequentially, this event fires after the

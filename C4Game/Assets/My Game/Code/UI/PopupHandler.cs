@@ -11,6 +11,8 @@ namespace CornTheory.UI
     /// </summary>
     public class PopupHandler : MonoBehaviour
     {
+        public event PopupOpened OnPopupOpened;
+        public event PopupClosed OnPopupClosed;
         [SerializeField] private Color BackgroundColor = new Color(10.0f / 255.0f, 10.0f / 255.0f, 10.0f / 255.0f, 0.6f);
         [SerializeField] private float DestroyTime = 0.5f;
         
@@ -24,9 +26,9 @@ namespace CornTheory.UI
             {
                 this.parent = parent;
                 handlingClose = false;
-                // TODO: replace this with an event?
-                // PlayerState.Instance.GameState = GameUIState.InWorldUI;
                 AddBackground();
+                PopupOpened action = OnPopupOpened;
+                if (null != action) action(gameObject);
             }
         }
 
@@ -37,16 +39,17 @@ namespace CornTheory.UI
                 if (handlingClose == true) return;
 
                 handlingClose = true;
-                // TODO: replace this with an event?
-                // PlayerState.Instance.GameState = GameUIState.InWorld;
+                
+                PopupClosed action = OnPopupClosed;
+                if (null != action) action(gameObject);
                 
                 // TODO: where is "open" started?
                 Animator animator = GetComponent<Animator>();
                 if (animator && animator.GetCurrentAnimatorStateInfo(0).IsName("Open"))
                     animator.Play("Close");
-
+                
                 RemoveBackground();
-                StartCoroutine(RunPopupDestroy());
+                StartCoroutine(PopupDestroy());
             }
         }
 
@@ -58,17 +61,23 @@ namespace CornTheory.UI
             }
         }
 
-        // We destroy the popup automatically 0.5 seconds after closing it.
-        // The destruction is performed asynchronously via a coroutine. If you
-        // want to destroy the popup at the exact time its closing animation is
-        // finished, you can use an animation event instead.
-        private IEnumerator RunPopupDestroy()
+        // ---------------------------------
+        // TODO
+        // Questioning if AddBackground(), RemoveBackground and maybe PopupDestroy
+        // belong here or in PopupManager
+        
+        /// <summary>
+        /// We destroy the popup automatically DestroyTime after closing it.
+        /// The destruction is performed asynchronously via a coroutine. 
+        /// </summary>
+        /// <returns></returns>
+        private IEnumerator PopupDestroy()
         {
             yield return new WaitForSeconds(DestroyTime);
             Destroy(backgroundObject);
             Destroy(gameObject);
         }
-
+        
         /// <summary>
         /// This adds shading to the rest of the screen to make it looked somewhat greyed out
         /// </summary>
