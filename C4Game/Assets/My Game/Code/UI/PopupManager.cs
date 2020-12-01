@@ -16,7 +16,6 @@ namespace CornTheory.UI
 
             var popup = Instantiate(which) as GameObject;
             popup.SetActive(true);
-            // popup.transform.localScale = Vector3.zero;
             popup.transform.localScale = new Vector3(1, 1, 1);
 
             if (null != Parent)
