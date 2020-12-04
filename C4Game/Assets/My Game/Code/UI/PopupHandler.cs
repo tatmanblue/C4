@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace CornTheory.UI
 {
+    
     /// <summary>
     /// Place this class on a prefab that is intended to be displayed as popup dialog
     /// Expectation is the prefab is made of 2d UI component
