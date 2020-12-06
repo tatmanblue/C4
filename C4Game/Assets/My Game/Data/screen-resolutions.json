@@ -1,0 +1,10 @@
+[
+  {"Id":  1, "Width": 1152, "Height": 648, "Frequency": 60, "Display": "1152x648", "Class": "16:9" },
+  {"Id":  2, "Width": 1280, "Height": 720, "Frequency": 60, "Display": "1280x720", "Class": "16:9" },
+  {"Id":  3, "Width": 1366, "Height": 768, "Frequency": 60, "Display": "1366x768", "Class": "16:9" },
+  {"Id":  4, "Width": 1600, "Height": 900, "Frequency": 60, "Display": "1600x900", "Class": "16:9" },
+  {"Id":  5, "Width": 1920, "Height": 1080, "Frequency": 60, "Display": "1920x1080", "Class": "16:9" },
+  {"Id":  6, "Width": 2560, "Height": 1440, "Frequency": 60, "Display": "2560x1440", "Class": "16:9" },
+  {"Id":  7, "Width": 3840, "Height": 2160, "Frequency": 60, "Display": "3840x2160", "Class": "16:9" },
+]
+  
