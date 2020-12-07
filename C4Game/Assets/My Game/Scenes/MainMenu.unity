@@ -885,7 +885,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 653179480}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
@@ -977,6 +977,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Parent: {fileID: 653179480}
+  BackgroundColor: {r: 0.1277145, g: 0.27383587, b: 0.3301887, a: 0.7882353}
+  DestroyTime: 0.5
 --- !u!1 &732346003
 GameObject:
   m_ObjectHideFlags: 0

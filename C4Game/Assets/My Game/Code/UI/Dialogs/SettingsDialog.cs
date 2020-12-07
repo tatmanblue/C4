@@ -37,7 +37,7 @@ namespace CornTheory.UI.Dialogs
         {
             // TODO: need to save settings
             ScreenResolution item = list[index];
-            Debug.Log($"changing resolution to {item.Display}");
+            Debug.Log($"changing resolution to {item.Width}x{item.Height} (using index {index})");
             Screen.SetResolution(item.Width, item.Height, true);
         }
     }
