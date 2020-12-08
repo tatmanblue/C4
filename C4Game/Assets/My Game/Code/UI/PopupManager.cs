@@ -25,10 +25,11 @@ namespace CornTheory.UI
             if (null == which)
                 return;
 
+            if (0 == dialogs.Count) AddBackground();
+            
             GameObject popup = Instantiate(which) as GameObject;
 
             dialogs.Push(popup);
-            if (1 == dialogs.Count) AddBackground();
             
             popup.SetActive(true);
             popup.transform.localScale = new Vector3(1, 1, 1);
@@ -49,6 +50,7 @@ namespace CornTheory.UI
             handler.OnPopupOpened += HandlePopupOpened;
             handler.OnPopupClosed += HandlePopupClosed;
             handler.Open(Parent);
+            
         }
 
         private void HandlePopupOpened(GameObject popupPrefab)
@@ -80,6 +82,9 @@ namespace CornTheory.UI
             
             // TODO: 
             // PlayerState.Instance.GameState = GameUIState.InWorld;
+            
+            // TODO: using the Stack<> if there anything left in the stack
+            // we want to open that, possibly :P
 
         }
         
@@ -121,7 +126,10 @@ namespace CornTheory.UI
             backgroundObject.transform.localScale = new Vector3(1, 1, 1);
             backgroundObject.GetComponent<RectTransform>().sizeDelta = Parent.GetComponent<RectTransform>().sizeDelta;
             backgroundObject.transform.SetParent(Parent.transform, false);
-            backgroundObject.transform.SetSiblingIndex(transform.GetSiblingIndex());
+            // original code has this next line and when it was used in PopupHandler, it worked
+            // leaving it here just for reminder/documentation should there be problems later.
+            // backgroundObject.transform.SetSiblingIndex(transform.GetSiblingIndex());
+            backgroundObject.transform.SetAsLastSibling();
         }
 
         /// <summary>

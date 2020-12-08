@@ -183,7 +183,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87007b6cbf2d4ca8a60870c3566e7d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BackgroundColor: {r: 0.1277145, g: 0.27383587, b: 0.3301887, a: 0.7882353}
   DestroyTime: 0.5
 --- !u!114 &6590462879680241475
 MonoBehaviour:
@@ -1516,7 +1515,7 @@ GameObject:
   - component: {fileID: 1147598965807775178}
   - component: {fileID: 5271340590536512926}
   m_Layer: 5
-  m_Name: QuitButton
+  m_Name: CloseButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1830,7 +1829,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Quit
+  m_text: 'Close
 
 '
   m_isRightToLeft: 0
