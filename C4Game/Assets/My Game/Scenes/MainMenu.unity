@@ -977,7 +977,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Parent: {fileID: 653179480}
-  BackgroundColor: {r: 0.1277145, g: 0.27383587, b: 0.3301887, a: 0.7882353}
+  BackgroundColor: {r: 0.1277145, g: 0.27383587, b: 0.3301887, a: 0.5019608}
   DestroyTime: 0.5
 --- !u!1 &732346003
 GameObject:
