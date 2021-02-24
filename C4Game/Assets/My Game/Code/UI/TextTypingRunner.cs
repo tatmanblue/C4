@@ -48,8 +48,8 @@ namespace CornTheory.UI
 
         private void SendNextItem()
         {
-            if (activeLine >= lines.Count) return;
             if (null == lines) return;
+            if (activeLine >= lines.Count) return;
 
             switch (lines[activeLine].LineType)
             {

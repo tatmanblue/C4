@@ -38,6 +38,12 @@ namespace My_Game.Code.UI.Tweening
         private bool run = true;
         private Color originalColor;
 
+        /// <summary>
+        /// The StartFading methods are used when the component is not allow to AutoStart
+        /// aka (AutoStart == true)
+        /// </summary>
+        /// <param name="alphaAdjustTo"></param>
+        /// <param name="durationMS"></param>
         public void StartFading(float alphaAdjustTo, int durationMS)
         {
             AlphaAdjustTo = alphaAdjustTo;

@@ -5,7 +5,7 @@ using UnityEngine;
 namespace CornTheory.UI.Tweening
 {
     /// <summary>
-    /// 
+    /// A container for "fade-able" UI elements which starts all "fade-able" UI elements on StartFading()
     /// </summary>
     public class FaderController : MonoBehaviour, IFader
     {

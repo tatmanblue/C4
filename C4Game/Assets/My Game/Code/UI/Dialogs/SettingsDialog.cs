@@ -10,9 +10,11 @@ namespace CornTheory.UI.Dialogs
     {
         [SerializeField] private TMP_Dropdown ScreenResolutions;
         private List<ScreenResolution> list = null;
+        private GlobalSettings settings = null;
         
         private void Start()
         {
+            settings = GlobalSettings.Load();
             list = GlobalSettings.GetAllResolutions();
             ScreenResolutions.options.Clear();
             foreach (ScreenResolution item in list)
@@ -24,8 +26,9 @@ namespace CornTheory.UI.Dialogs
                 );
             }
 
-            // TODO: need to get this from the settings
-            ScreenResolutions.SetValueWithoutNotify(6);
+            // settings saves the id #.  Currently the list is sorted by ID therefore the index
+            // will be id - 1
+            ScreenResolutions.SetValueWithoutNotify(settings.ResolutionId - 1);
             
             ScreenResolutions.onValueChanged.AddListener(delegate
             {
@@ -35,10 +38,13 @@ namespace CornTheory.UI.Dialogs
 
         private void ScreenResolutionValueChanged(int index)
         {
-            // TODO: need to save settings
             ScreenResolution item = list[index];
             Debug.Log($"changing resolution to {item.Width}x{item.Height} (using index {index})");
             Screen.SetResolution(item.Width, item.Height, true);
+            
+            // TODO: longer term there should be cancel/revert button in which changes are reverted
+            settings.ResolutionId = item.Id;
+            settings.Save();
         }
     }
 }
