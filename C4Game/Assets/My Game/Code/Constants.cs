@@ -26,7 +26,7 @@ namespace CornTheory
 
         // Scenes these need to match the sceen file name
         public static readonly string MainMenuScene = "MainMenu";
-        public static readonly string MainWorldScene = "TBD-CHANGE-THIS";
+        public static readonly string MainWorldScene = "OpenWorld";
         public static readonly string MainWorldSceneOld = "TBD-CHANGE-THIS";
         public static readonly string MainWorldSceneExperimental = "TBD-CHANGE-THIS";
         public static readonly string OpenMenuScene =  "MainMenu";

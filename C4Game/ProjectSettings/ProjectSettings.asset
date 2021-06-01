@@ -625,7 +625,7 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
   scriptingDefineSymbols:
-    1: LANDSCAPE_BUILDER;LB_EDITOR
+    1: LANDSCAPE_BUILDER;LB_EDITOR;VEGETATION_STUDIO;TOUCH_REACT
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}

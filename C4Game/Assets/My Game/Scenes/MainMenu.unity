@@ -2552,8 +2552,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 653179485}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: Quit
+        m_TargetAssemblyTypeName: CornTheory.UI.SceneSwitcher, Assembly-CSharp
+        m_MethodName: GotoMainScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
