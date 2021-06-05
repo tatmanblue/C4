@@ -11,7 +11,7 @@ Karl landed just outside a of town.  Karl didn’t know if this was where he was
 Unity Game.   RPG/Open world style play in a modern setting.  For Windows, MacOS, Linux
 
 # License
-All of the files required to build the game is provided for security review, only.  By downloading, copying or otherwise accessing the project, you agree to not copy, redistribute, or transmit any of the files in the repo in any format, neither compiled, or raw, in whole or in part, or any other way.
+All of the files required to build the game is provided for security review, only.  By downloading, viewing, copying or otherwise accessing the project, you agree to not copy, redistribute, or transmit any of the files in the repo in any format, neither compiled, or raw, in whole or in part, or any other way.
 
 Please see [LICENSE.md](./LICENSE.md).  
 
@@ -23,4 +23,4 @@ On-going/Active
 
 This game is in prototype, early development stage.
 
-edited: 2020.11.11
+edited: 2021.06.07
